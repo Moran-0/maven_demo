@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script src="js/axios-0.18.0.js"></script>
+<!--直接从网址导入-->
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+
+<script>
+    //1. get
+   /* axios({
+        method:"get",
+        url:"http://localhost:8080/ajax_demo_war/axiosServlet?username=zhangsan"
+    }).then(function (resp) {
+        alert(resp.data);
+    })*/
+
+
+    //2. post
+    // axios({
+    //     method:"post",
+    //     url:"http://localhost:8080/ajax_demo_war/axiosServlet",
+    //     data:"username=zhangsan"
+    // }).then(function (resp) {//resp为访问链接返回的结果
+    //     alert(resp.data);
+    // })
+
+    //3. 请求方式别名
+    axios.get("http://localhost:8080/ajax_demo_war/axiosServlet").then(function (res){
+        alert(res.data);
+    })
+
+
+
+</script>
+
+</body>
+</html>
