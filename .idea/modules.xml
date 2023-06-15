@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/IDEA-Project.iml" filepath="$PROJECT_DIR$/.idea/IDEA-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawebLearning/vue-demo.iml" filepath="$PROJECT_DIR$/javawebLearning/vue-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawebLearning/vue-demo1.iml" filepath="$PROJECT_DIR$/javawebLearning/vue-demo1.iml" />
     </modules>
   </component>
 </project>

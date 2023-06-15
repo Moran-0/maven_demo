@@ -26,7 +26,7 @@
         </div>
         <div class="image">
         <!--v-bind或者直接冒号：绑定属性-->
-            <img :src="imgUrls[index]" v-show="isShow" alt="" width="1000" height="500"><br>
+            <img :src="imgUrls[index]" v-show="isShow" alt="" width="500" height="250"><br>
             <button @click="showOrNot">{{showInfo}}</button>
             <button @click="changeImg">换图</button>
         </div>
@@ -38,6 +38,10 @@
         <input type="text" v-model="food" @keyup.enter="SetFood"><br>
         <h2>{{ food }}</h2>
         <input type="button" value="get" class="get" @click="getJoke"><br>
+        <div class="joke">
+            <input type="button" value="获取笑话" @click="getRandomJoke">
+            <p>{{ joke }}</p>
+        </div>
     </div>
 
 </body>
@@ -61,6 +65,7 @@
             showInfo:"隐藏",
             imgUrls:["imgs/a.jpg", "imgs/reg_bg_min.jpg", "imgs/vlada-cXahzradqMQ-unsplash.jpg"],
             index:0,
+            joke:"笑话？",
         },
         methods:{
             Do:function (){
@@ -105,6 +110,14 @@
                 axios.get("https://autumnfish.cn/api/joke/list?num=4").then(function(res){
                     console.log(res);
                 },function(err){
+                    console.log(err);
+                })
+            },
+            getRandomJoke:function(){
+                let that = this;
+                axios.get("https://autumnfish.cn/api/joke").then(function (res){
+                    that.joke = res.data;
+                },function (err){
                     console.log(err);
                 })
             }

@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/JavaWebLearning/ajax-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/javawebLearning/ajax-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/javawebLearning/course" />
+    <file type="web" url="file://$PROJECT_DIR$/javawebLearning/CourseService" />
+    <file type="web" url="file://$PROJECT_DIR$/javawebLearning/spring-demo" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/maven_demo/pom.xml" />
         <option value="$PROJECT_DIR$/ajax-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/javawebLearning/spring-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/javawebLearning/course/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
