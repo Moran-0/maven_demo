@@ -28,7 +28,7 @@
   </el-row>
   <el-row>
     <el-button>默认按钮</el-button>
-    <el-button type="primary">主要按钮</el-button>
+    <el-button type="primary" @click="test">主要按钮</el-button>
     <el-button type="success">成功按钮</el-button>
     <el-button type="info">信息按钮</el-button>
     <el-button type="warning">警告按钮</el-button>
@@ -39,17 +39,30 @@
 
 <script>
 export default {
-  name: "TestView"
+  name: "TestView",
+  methods:{
+    test(){
+      let data;
+      alert("Beginning");
+      this.$axios.get('http://localhost:8080/customers').then((res) =>{
+        alert("Success!");
+        data = res.data;
+        console.log(data);
+      })
+    },
+
+  }
 }
 </script>
 
 <style scoped>
 .el-row {
   margin-bottom: 20px;
-&:last-child {
-   margin-bottom: 0;
- }
 }
+.el-row:last-child{
+     margin-bottom: 0;
+   }
+
 .el-col {
   border-radius: 4px;
 }

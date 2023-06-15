@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/ajax-demo" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/course" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/CourseService" />
+    <file type="web" url="file://$PROJECT_DIR$/javawebLearning/practice" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/spring-demo" />
   </component>
   <component name="MavenProjectsManager">
@@ -12,8 +13,9 @@
       <list>
         <option value="$PROJECT_DIR$/maven_demo/pom.xml" />
         <option value="$PROJECT_DIR$/ajax-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/javawebLearning/spring-demo/pom.xml" />
         <option value="$PROJECT_DIR$/javawebLearning/course/pom.xml" />
+        <option value="$PROJECT_DIR$/javawebLearning/practice/pom.xml" />
+        <option value="$PROJECT_DIR$/javawebLearning/spring-demo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
