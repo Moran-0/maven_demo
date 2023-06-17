@@ -48,7 +48,9 @@ export default {
         alert("Success!");
         data = res.data;
         console.log(data);
-      })
+      }),(err) =>{
+        console.log(err);
+      }
     },
 
   }
