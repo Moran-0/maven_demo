@@ -6,4 +6,10 @@ public interface ManagerService {
     List<Manager> selectManagersBy(String userId, String shopId);
 
     void addManager(Manager manager);
+
+    void changeStatus(String userId,boolean status);
+
+    Integer getCount(String userId);
+
+    List<Manager> login(Manager manager);
 }

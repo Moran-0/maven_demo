@@ -3,19 +3,22 @@ package com.moran.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Slf4j
-public class Customer {
+public class Shop {
     private Integer id;
-    private String customerId;
-    private String password;
     private String name;
+    private String province;
+    private String city;
+    private String district;
+    private String address;
+    private String tel;
+    private String owner;
+    private String status;
+    private String ownerId;
     private LocalDateTime createTime;
-
 }

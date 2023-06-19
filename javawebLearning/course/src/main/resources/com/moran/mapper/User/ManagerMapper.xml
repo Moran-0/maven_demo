@@ -17,15 +17,22 @@
 
     </resultMap>
 
+    <update id="updateStatus">
+        update sys_user set status = #{status} where user_id = #{userId}
+    </update>
+
     <select id="selectManagersBy" resultMap="managerResultMap">
         select * from sys_user
         <where>
-            <if test="userId!=null">
+            <if test="userId!=null and userId!=''">
                 user_id = #{userId}
             </if>
-            <if test="shopId!=null">
+            <if test="shopId!=null and shopId != ''">
                 and shop_id = #{shopId}
             </if>
         </where>
+    </select>
+    <select id="getUser" resultMap="managerResultMap">
+        select * from sys_user where user_id = #{userId} and password = #{password}
     </select>
 </mapper>

@@ -7,10 +7,10 @@
 
     <resultMap id="customerResultMap" type="com.moran.pojo.Customer">
         <result column="id" property="id"/>
-        <result column="customer_id" property="customer_id"/>
+        <result column="customer_id" property="customerId"/>
         <result column="password" property="password"/>
         <result column="name" property="name"/>
-        <result column="create_time" property="create_time"/>
+        <result column="create_time" property="createTime"/>
     </resultMap>
 
     <sql id="customerBy">
@@ -34,13 +34,17 @@
     <select id="pageSelect" resultMap="customerResultMap">
         select * from lease_customer
         <where>
-            <if test="customerId!=null">
+            <if test="customerId!=null and customerId!=''">
                 customer_id = #{customerId}
             </if>
-            <if test="customerName!=null">
+            <if test="customerName!=null and customerName!=''">
                 and name like concat('%',#{customerName},'%')
             </if>
         </where>
+    </select>
+
+    <select id="getCustomer" resultMap="customerResultMap">
+        select * from lease_customer where customer_id = #{customerId} and password = #{password}
     </select>
 
     <delete id="deleteCustomer">

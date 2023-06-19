@@ -63,7 +63,24 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void addCustomer(Customer customer) {
-        customer.setCreate_time(LocalDateTime.now());
+        customer.setCreateTime(LocalDateTime.now());
         customerMapper.insertCustomer(customer);
+    }
+
+    @Override
+    public Boolean registerCustomer(Customer customer) {
+        Integer count = customerMapper.selectCustomerById(customer.getCustomerId());
+        if (count != 0) return false;
+        else {
+            customer.setCreateTime(LocalDateTime.now());
+            customerMapper.register(customer);
+        }
+        return true;
+    }
+
+    @Override
+    public List<Customer> login(Customer customer) {
+        List<Customer> customers = customerMapper.getCustomer(customer);
+        return customers;
     }
 }

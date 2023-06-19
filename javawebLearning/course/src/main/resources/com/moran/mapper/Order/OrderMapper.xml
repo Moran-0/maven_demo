@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moran.mapper.Order.OrderMapper">
+
+    <resultMap id="orderResultMap" type="com.moran.pojo.Order">
+        <result column="order_id" property="orderId"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="locker_id" property="lockerId"/>
+        <result column="shop_id" property="shopId"/>
+        <result column="from_time" property="fromTime"/>
+        <result column="to_time" property="toTime"/>
+        <result column="pay_total" property="payTotal"/>
+        <result column="order_time" property="orderTime"/>
+    </resultMap>
+
+    <select id="pageSelect" resultMap="orderResultMap">
+        select * from lease_order
+        <where>
+            <if test="orderId!=null and orderId !=''">
+                order_id = #{orderId}
+            </if>
+            <if test="customerId!=null and customerId != ''">
+                customer_id = #{customerId}
+            </if>
+        </where>
+
+    </select>
+</mapper>

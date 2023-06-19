@@ -25,4 +25,8 @@ public interface CustomerService {
     void deleteCustomer(List<Integer> ids);
 
     void addCustomer(Customer customer);
+
+    Boolean registerCustomer(Customer customer);
+
+    List<Customer> login(Customer customer);
 }

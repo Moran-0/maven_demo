@@ -14,4 +14,11 @@ public interface ManagerMapper {
     @Insert("insert into sys_user(user_id, user_name, status,create_id, create_time,shop_id) " +
             "values(#{userId}, #{userName}, #{status}, #{createId}, #{createTime},#{shopId})")
     void insertManager(Manager manager);
+
+    void updateStatus(String userId,boolean status);
+
+    @Select("select count(*) from sys_user where user_id = #{managerId}")
+    public Integer getCount(String managerId);
+
+    List<Manager> getUser(Manager manager);
 }

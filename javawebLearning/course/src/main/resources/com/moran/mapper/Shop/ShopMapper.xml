@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moran.mapper.Shop.ShopMapper">
+    <resultMap id="shopResultMap" type="com.moran.pojo.Shop">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="district" property="district"/>
+        <result column="address" property="address"/>
+        <result column="tel" property="tel"/>
+        <result column="owner" property="owner"/>
+        <result column="status" property="status"/>
+        <result column="owner_id" property="ownerId"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <select id="selectShop" resultMap="shopResultMap">
+        select * from shop_shop
+        <where>
+            <if test="province !='' and province != null">
+                province like concat('%',#{province},'%')
+            </if>
+            <if test="name !='' and name != null">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

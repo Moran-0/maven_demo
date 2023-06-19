@@ -33,4 +33,14 @@ public interface CustomerMapper {
 
     @Insert("insert into lease_customer(customer_id,  name, create_time) values(#{customer_id}, #{name}, #{create_time})")
     void insertCustomer(Customer customer);
+
+    @Select("select count(*) from lease_customer where customer_id = #{customerId}")
+    Integer selectCustomerById(String customerId);
+
+    @Insert("insert into lease_customer(customer_id, name, create_time,password)" +
+            "values (#{customerId},#{name},#{createTime},#{password})")
+    void register(Customer customer);
+
+
+    List<Customer> getCustomer(Customer customer);
 }
