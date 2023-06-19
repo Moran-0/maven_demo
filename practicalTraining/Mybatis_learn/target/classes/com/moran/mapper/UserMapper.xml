@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moran.mapper.UserMapper">
+    <resultMap type="com.moran.pojo.User" id="UserResultMap">
+        <result column="id" property="id"/>
+        <result column="uname" property="name"/>
+        <result column="pass" property="password"/>
+        <result column="realname" property="realName"/>
+    </resultMap>
+    <!--返回插入数据后生成的最新的主键值（只适合有自增长列的数据库），这里是id-->
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user(id, uname,pass,realname)
+        values(#{id},#{name},#{password},#{realName})
+    </insert>
+    <update id="updateUser">
+        update t_user set uname=#{name},pass=#{password},realname=#{realName}
+        where id = #{id}
+    </update>
+    <delete id="deleteUsers">
+        delete from t_user where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectUsers" resultMap="UserResultMap">
+        select * from t_user
+    </select>
+    <select id="selectUser" resultMap="UserResultMap">
+        select * from t_user
+        <where>
+            <if test="id!=null">
+                id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <!--collection指定为array时可不用@Param注解指定参数名 否则需要指定@Param注解-->
+    <select id="selectUsersFor" resultMap="UserResultMap">
+        select * from t_user where id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+
+    </select>
+    <select id="selectUsersMap" resultMap="UserResultMap">
+        select * from t_user where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+        and uname like concat('%',#{userName},'%')
+    </select>
+
+</mapper>

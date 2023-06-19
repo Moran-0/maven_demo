@@ -79,7 +79,7 @@
         axios.get("http://localhost:8080/ajax_demo_war/selectUserServlet?username="+username).then(function (res) {
             alert(res.data);
             alert(res.readyState);
-            if (res.readyState == 4 && res.status == 200){
+            if (res.status == 200){
                 alert(res.data);
                 if (res.data.toString() == "true")
                     document.getElementById("username_err").style.display = '';

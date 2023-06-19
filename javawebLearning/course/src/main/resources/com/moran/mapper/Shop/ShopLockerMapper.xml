@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moran.mapper.Shop.ShopLockerMapper">
+
+<!--    <resultMap id="shopLockerMap" type="com.moran."-->
+    <resultMap id="shopLockerMap" type="com.moran.pojo.ShopLocker">
+        <result column="model_id" property="modelId"/>
+        <result column="shop_id" property="shopId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="num" property="num"/>
+    </resultMap>
+
+    <update id="updateShopLockers">
+        update shop_locker set num = num + #{num}
+        where model_id = #{modelId} and shop_id = #{shopId}
+    </update>
+
+    <select id="selectShopLockers" resultMap="shopLockerMap">
+        select * from shop_locker
+        <where>
+            <if test="modelId!=null and modelId != ''">
+                model_id = #{modelId}
+            </if>
+            <if test="shopName != null and shopName != ''">
+                and shop_name like concat('%',#{shopName},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

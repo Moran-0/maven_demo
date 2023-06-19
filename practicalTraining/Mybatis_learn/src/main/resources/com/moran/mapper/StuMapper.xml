@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moran.mapper.StuMapper">
+
+    <resultMap id="stuResultMap" type="com.moran.pojo.Student">
+        <result column="id" property="id"/>
+        <result column="u_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="score" property="score"/>
+    </resultMap>
+    <insert id="addStudent">
+        insert into t_student (id,u_name,password,stu_name,gender,birthday,score)
+        values (#{id}, #{userName}, #{password},#{stuName},#{gender},#{birthday},#{score})
+    </insert>
+    <update id="updateScore">
+        update t_student set score = #{score} where id = #{id}
+    </update>
+
+    <delete id="deleteStudentById">
+        delete from t_student where id = #{id}
+    </delete>
+
+    <select id="selectStudent" resultMap="stuResultMap">
+        select * from t_student
+    </select>
+    <select id="selectStudentByStuName" resultMap="stuResultMap">
+        select * from t_student
+        <where>
+            <if test="stuName!=null and stuName!=''">
+                stu_name like concat('%',#{stuName},'%');
+            </if>
+        </where>
+    </select>
+    <select id="selectStudentById" resultMap="stuResultMap">
+        select * from t_student where id = #{id}
+    </select>
+
+</mapper>

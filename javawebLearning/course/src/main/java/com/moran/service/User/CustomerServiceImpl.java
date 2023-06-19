@@ -15,6 +15,26 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService{
     @Autowired
     private CustomerMapper customerMapper;
+
+    /**
+     * 顾客信息分页查询
+     * @param page
+     * @param pageSize
+     * @param customerId
+     * @param customerName
+     * @return
+     */
+    @Override
+    public CustomerPage pageSelect(Integer page, Integer pageSize,String customerId, String customerName) {
+        //1/设置分页参数
+        PageHelper.startPage(page, pageSize);
+        //2.执行查询
+        List<Customer> customers = customerMapper.pageSelect(customerId,customerName);
+        Page<Customer> p = (Page<Customer>) customers;
+        CustomerPage customerPage = new CustomerPage(p.getTotal(), p.getResult());
+        return customerPage;
+    }
+
     /**
      * 查询顾客的全部信息 discarded
      * @return
@@ -45,16 +65,7 @@ public class CustomerServiceImpl implements CustomerService{
 //        return customerPage;
 //    }
 
-    @Override
-    public CustomerPage pageSelect(Integer page, Integer pageSize,String customerId, String customerName) {
-        //1/设置分页参数
-        PageHelper.startPage(page, pageSize);
-        //2.执行查询
-        List<Customer> customers = customerMapper.pageSelect(customerId,customerName);
-        Page<Customer> p = (Page<Customer>) customers;
-        CustomerPage customerPage = new CustomerPage(p.getTotal(), p.getResult());
-        return customerPage;
-    }
+
 
     @Override
     public void deleteCustomer(List<Integer> ids) {
@@ -63,7 +74,24 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void addCustomer(Customer customer) {
-        customer.setCreate_time(LocalDateTime.now());
+        customer.setCreateTime(LocalDateTime.now());
         customerMapper.insertCustomer(customer);
+    }
+
+    @Override
+    public Boolean registerCustomer(Customer customer) {
+        Integer count = customerMapper.selectCustomerById(customer.getCustomerId());
+        if (count != 0) return false;
+        else {
+            customer.setCreateTime(LocalDateTime.now());
+            customerMapper.register(customer);
+        }
+        return true;
+    }
+
+    @Override
+    public List<Customer> login(Customer customer) {
+        List<Customer> customers = customerMapper.getCustomer(customer);
+        return customers;
     }
 }

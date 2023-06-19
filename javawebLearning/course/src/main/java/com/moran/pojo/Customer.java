@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 @Slf4j
 public class Customer {
     private Integer id;
-    private String customer_id;
+    private String customerId;
     private String password;
     private String name;
-    private LocalDateTime create_time;
+    private LocalDateTime createTime;
 
 }

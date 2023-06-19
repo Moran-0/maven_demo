@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/CourseService" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/practice" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/spring-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/practicalTraining/maven_02" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -16,6 +17,10 @@
         <option value="$PROJECT_DIR$/javawebLearning/course/pom.xml" />
         <option value="$PROJECT_DIR$/javawebLearning/practice/pom.xml" />
         <option value="$PROJECT_DIR$/javawebLearning/spring-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/maven_01/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/maven_02/pom.xml" />
+        <option value="$PROJECT_DIR$/javawebLearning/ajax-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/Mybatis_learn/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
