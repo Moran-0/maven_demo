@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moran.mapper.EmpMapper">
+
+    <resultMap id="EmpMap" type="com.moran.pojo.Emp">
+        <result column="empno" property="empNo"></result>
+        <result column="ename" property="empName"></result>
+        <result column="job" property="job"></result>
+        <result column="deptno" property="deptNo"></result><!--添加后即使作为传递的参数也会封装进emp的属性中-->
+        <result column="mgr" property="mgr"></result>
+        <result column="hiredate" property="hireDate"></result>
+        <result column="sal" property="salary"></result>
+        <result column="comm" property="comm"></result>
+        <!--        通过association标签设置多对一关联；property值对于Emp类的dep对象属性，
+        select值对应sql映射语句id，column属性(数据库中的列名)表示要用当前查询结果的哪个结果作为参数传递给select属性对应的sql语句-->
+        <association property="dep" javaType="com.moran.pojo.Dep" select="selectDept" column="deptno">
+
+        </association>
+        <!--        <result column="dep" property="dep"></result>-->
+    </resultMap>
+
+    <resultMap id="DepMap" type="com.moran.pojo.Dep">
+        <result column="deptno" property="deptNo"></result>
+        <result column="dname" property="depName"></result>
+        <result column="loc" property="loc"></result>
+
+    </resultMap>
+    <select id="selectAllEmp" resultMap="EmpMap">
+        select * from emp
+    </select>
+
+    <select id="selectDept" resultMap="DepMap">
+        select * from dept where deptno = #{deptNo}
+    </select>
+</mapper>
