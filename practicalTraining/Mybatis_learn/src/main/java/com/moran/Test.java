@@ -1,7 +1,11 @@
 package com.moran;
 
+import com.moran.mapper.Dep1Mapper;
+import com.moran.mapper.EmpMapper;
 import com.moran.mapper.StuMapper;
 import com.moran.mapper.UserMapper;
+import com.moran.pojo.Dep1;
+import com.moran.pojo.Emp;
 import com.moran.pojo.Student;
 import com.moran.util.SqlSessionUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -14,11 +18,15 @@ import java.util.List;
 @Slf4j
 public class Test {
     private static StuMapper stuMapper;
+    private static EmpMapper empMapper;
+    private static Dep1Mapper dep1Mapper;
     private static SqlSession sqlSession;
     static {
         SqlSessionFactory sqlSessionFactory = SqlSessionUtil.getSqlSessionFactory();
         sqlSession = sqlSessionFactory.openSession();
         stuMapper = sqlSession.getMapper(StuMapper.class);
+        empMapper = sqlSession.getMapper(EmpMapper.class);
+        dep1Mapper = sqlSession.getMapper(Dep1Mapper.class);
     }
 
     public static void main(String[] args) {
@@ -27,7 +35,9 @@ public class Test {
 //        addStudent();
 //        updateStudentScore();
 //        deleteStudentById();
-        selectStudentByStuName();
+//        selectStudentByStuName();
+//        selectEmp();
+        selectDep();
     }
 
     private static void selectAll(){
@@ -74,5 +84,23 @@ public class Test {
         log.info("通过名字查询学生信息,参数：{}",stuName);
         List<Student> students = stuMapper.selectStudentByStuName(stuName);
         System.out.println(students);
+    }
+
+    private static void selectEmp(){
+        log.info("关联查询dept和emp");
+        List<Emp> emps = empMapper.selectAllEmp();
+        System.out.println(emps);
+
+    }
+    private static void selectDep(){
+        log.info("多对一关联查询");
+        List<Dep1> dep1s = dep1Mapper.selectDep1(10);
+        for (Dep1 dep : dep1s){
+            System.out.println(dep.getDeptNo());
+            System.out.println(dep.getDepName());
+            System.out.println(dep.getLoc());
+            System.out.println(dep.getEmp1s());
+        }
+//        System.out.println(dep1s);
     }
 }
