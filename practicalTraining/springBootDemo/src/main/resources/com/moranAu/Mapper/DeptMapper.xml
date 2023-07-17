@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moranAu.Mapper.DeptMapper">
+    <resultMap id="deptMap" type="com.moranAu.Pojo.Dept">
+        <result column="deptno" property="deptNo"></result>
+        <result column="dname" property="deptName"></result>
+        <result column="loc" property="loc"></result>
+    </resultMap>
+    <select id="selectDept" resultMap="deptMap">
+        select * from dept
+        <where>
+            <if test="deptName!=null and deptName!='">
+                dname = #{deptName}
+            </if>
+            <if test="deptNo!=null and deptNo!=''">
+                deptno = #{deptNo}
+            </if>
+        </where>
+
+    </select>
+</mapper>

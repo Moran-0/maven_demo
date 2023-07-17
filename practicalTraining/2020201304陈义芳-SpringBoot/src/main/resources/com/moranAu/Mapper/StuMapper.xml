@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moranAu.Mapper.StuMapper">
+
+    <resultMap id="stuResultMap" type="com.moranAu.Pojo.Student">
+        <result column="id" property="id"/>
+        <result column="uname" property="userName"/>
+        <result column="pass" property="password"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="gender" property="gender"/>
+        <result column="birthdate" property="birthdate"/>
+        <result column="score" property="score"/>
+    </resultMap>
+    <insert id="addStudent">
+        insert into t_student (id, uname, pass, stu_name, gender, birthdate, score)
+        values (#{id}, #{userName}, #{password}, #{stuName}, #{gender}, #{birthdate}, #{score})
+    </insert>
+    <update id="updateScore">
+        update t_student
+        set score = #{score}
+        where id = #{id}
+    </update>
+    <update id="updateStu">
+        update t_student
+        <set>
+            <if test="userName!=null and userName!=''">
+                uname = #{userName},
+            </if>
+            <if test="password!=null and password!=''">
+                pass = #{password},
+            </if>
+            <if test="stuName!=null and stuName!=''">
+                stu_name = #{stuName},
+            </if>
+            <if test="birthdate!=null">
+                birthdate = #{birthdate},
+            </if>
+            <if test="score!=null and score!=''">
+                score = #{score},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteStudentById">
+        delete
+        from t_student
+        where id = #{id}
+    </delete>
+
+    <select id="selectStudent" resultMap="stuResultMap">
+        select *
+        from t_student
+    </select>
+    <select id="selectStudentByStuName" resultMap="stuResultMap">
+        select * from t_student
+        <where>
+            <if test="stuName!=null and stuName!=''">
+                stu_name like concat('%',#{stuName},'%');
+            </if>
+        </where>
+    </select>
+    <select id="selectStudentById" resultMap="stuResultMap">
+        select *
+        from t_student
+        where id = #{id}
+    </select>
+
+    <select id="login" resultType="java.lang.Integer">
+        select count(*)
+        from t_student
+        where uname = #{uName}
+          and pass = #{password}
+    </select>
+
+</mapper>

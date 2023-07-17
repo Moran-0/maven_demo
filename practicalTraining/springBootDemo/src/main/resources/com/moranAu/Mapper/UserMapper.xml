@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moranAu.Mapper.UserMapper">
+    <resultMap id="userMap" type="com.moranAu.Pojo.User">
+        <result column="id" property="id"></result>
+        <result column="uname" property="name"></result>
+        <result column="pass" property="password"></result>
+        <result column="realname" property="realName"></result>
+    </resultMap>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user (id,uname,pass,realname)
+        values (#{id},#{name},#{password},#{realName})
+    </insert>
+    <update id="updatePassword">
+        update t_user set pass = #{password} where id = #{id}
+    </update>
+    <!--删除用户 -->
+    <delete id="deleteUser">
+        delete from t_user where id = #{id}
+    </delete>
+
+    <select id="selectUsers" resultMap="userMap">
+        select * from t_user
+    </select>
+    <select id="login" resultMap="userMap">
+        select * from t_user where uname = #{name} and pass = #{password}
+    </select>
+</mapper>
