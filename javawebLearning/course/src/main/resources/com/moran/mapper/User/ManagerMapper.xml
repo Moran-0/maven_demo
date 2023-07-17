@@ -5,7 +5,7 @@
 
 <mapper namespace="com.moran.mapper.User.ManagerMapper">
 
-    <resultMap id="managerResultMap" type="com.moran.pojo.Manager">
+    <resultMap id="managerResultMap" type="com.moran.Pojo.Manager">
         <result column="user_id" property="userId"/>
         <result column="user_name" property="userName"/>
         <result column="password" property="password"/>

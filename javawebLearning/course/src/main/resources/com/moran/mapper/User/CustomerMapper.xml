@@ -5,7 +5,7 @@
 
 <mapper namespace="com.moran.mapper.User.CustomerMapper">
 
-    <resultMap id="customerResultMap" type="com.moran.pojo.Customer">
+    <resultMap id="customerResultMap" type="com.moran.Pojo.Customer">
         <result column="id" property="id"/>
         <result column="customer_id" property="customerId"/>
         <result column="password" property="password"/>

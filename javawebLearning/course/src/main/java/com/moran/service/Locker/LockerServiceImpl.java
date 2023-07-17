@@ -3,9 +3,9 @@ package com.moran.service.Locker;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.moran.mapper.Locker.LockerMapper;
-import com.moran.pojo.Locker;
-import com.moran.pojo.LockerPage;
-import com.moran.pojo.LockerType;
+import com.moran.Pojo.Locker;
+import com.moran.Pojo.LockerPage;
+import com.moran.Pojo.LockerType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

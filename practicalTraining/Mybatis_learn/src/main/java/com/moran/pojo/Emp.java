@@ -1,6 +1,5 @@
-package com.moran.pojo;
+package com.moran.Pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

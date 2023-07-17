@@ -1,6 +1,6 @@
 package com.moran.mapper.Shop;
 
-import com.moran.pojo.ShopLocker;
+import com.moran.Pojo.ShopLocker;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

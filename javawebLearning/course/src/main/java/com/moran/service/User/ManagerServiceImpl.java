@@ -1,7 +1,7 @@
 package com.moran.service.User;
 
 import com.moran.mapper.User.ManagerMapper;
-import com.moran.pojo.Manager;
+import com.moran.Pojo.Manager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

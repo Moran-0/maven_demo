@@ -1,8 +1,8 @@
 package com.moran.controller.Locker;
 
-import com.moran.pojo.LockerPage;
-import com.moran.pojo.LockerType;
-import com.moran.pojo.Result;
+import com.moran.Pojo.LockerPage;
+import com.moran.Pojo.LockerType;
+import com.moran.Pojo.Result;
 import com.moran.service.Locker.LockerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

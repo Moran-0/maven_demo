@@ -12,19 +12,30 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Mybatis_learn" />
-        <module name="course" />
+        <module name="springBootDemo" />
         <module name="practice" />
-        <module name="maven_02" />
+        <module name="spring-mvc" />
+        <module name="spring-work" />
         <module name="ajax-demo" />
+        <module name="mvc-work" />
+        <module name="course" />
+        <module name="spring-learn" />
+        <module name="SSM" />
+        <module name="maven_02" />
         <module name="spring-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="mvc_ssm_cyf" target="17" />
+      <module name="ssm_mvc_cyf" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="course" options="-parameters" />
       <module name="practice" options="-parameters" />
       <module name="spring-demo" options="-parameters" />
+      <module name="springBootDemo" options="-parameters" />
     </option>
   </component>
 </project>

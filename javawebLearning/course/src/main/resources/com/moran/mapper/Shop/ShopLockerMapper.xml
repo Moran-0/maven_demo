@@ -5,7 +5,7 @@
 <mapper namespace="com.moran.mapper.Shop.ShopLockerMapper">
 
 <!--    <resultMap id="shopLockerMap" type="com.moran."-->
-    <resultMap id="shopLockerMap" type="com.moran.pojo.ShopLocker">
+    <resultMap id="shopLockerMap" type="com.moran.Pojo.ShopLocker">
         <result column="model_id" property="modelId"/>
         <result column="shop_id" property="shopId"/>
         <result column="shop_name" property="shopName"/>

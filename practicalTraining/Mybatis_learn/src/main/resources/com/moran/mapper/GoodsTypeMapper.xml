@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.moran.mapper.GoodsTypeMapper">
+    <resultMap id="GoodsTypeMap" type="com.moran.Pojo.GoodsType1">
+        <result column="gtId" property="gtId"></result>
+        <collection property="goods1List" ofType="com.moran.Pojo.Goods1" column="gtId" select="selectGoods1">
+        </collection>
+    </resultMap>
+
+    <select id="selectGoodsTypes" resultMap="GoodsTypeMap">
+        select * from goodstype
+    </select>
+
+    <select id="selectGoods1" resultType="com.moran.Pojo.Goods1">
+        select * from goods where gtId = #{gtId}
+    </select>
+</mapper>

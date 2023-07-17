@@ -1,7 +1,7 @@
 package com.moran.service.Shop;
 
 import com.moran.mapper.Shop.ShopLockerMapper;
-import com.moran.pojo.ShopLocker;
+import com.moran.Pojo.ShopLocker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

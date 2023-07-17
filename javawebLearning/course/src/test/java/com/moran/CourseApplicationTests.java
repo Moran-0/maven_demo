@@ -1,17 +1,11 @@
 package com.moran;
 
-import com.moran.controller.Order.OrderController;
 import com.moran.mapper.User.CustomerMapper;
 import com.moran.mapper.User.ManagerMapper;
-import com.moran.pojo.Customer;
-import com.moran.pojo.Manager;
 import com.moran.service.Order.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @SpringBootTest
 class CourseApplicationTests {

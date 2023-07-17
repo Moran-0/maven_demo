@@ -1,7 +1,7 @@
 package com.moran.service.Locker;
 
-import com.moran.pojo.LockerPage;
-import com.moran.pojo.LockerType;
+import com.moran.Pojo.LockerPage;
+import com.moran.Pojo.LockerType;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.moran.controller.User;
 
-import com.moran.pojo.Customer;
-import com.moran.pojo.CustomerPage;
-import com.moran.pojo.Result;
+import com.moran.Pojo.Customer;
+import com.moran.Pojo.CustomerPage;
+import com.moran.Pojo.Result;
 import com.moran.service.User.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

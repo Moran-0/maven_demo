@@ -1,7 +1,7 @@
 package com.moran.controller.User;
 
-import com.moran.pojo.Manager;
-import com.moran.pojo.Result;
+import com.moran.Pojo.Manager;
+import com.moran.Pojo.Result;
 import com.moran.service.User.ManagerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @Slf4j
-
 public class ManagerController {
     @Autowired
     private ManagerService managerService;

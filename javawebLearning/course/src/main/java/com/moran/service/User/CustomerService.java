@@ -1,7 +1,7 @@
 package com.moran.service.User;
 
-import com.moran.pojo.Customer;
-import com.moran.pojo.CustomerPage;
+import com.moran.Pojo.Customer;
+import com.moran.Pojo.CustomerPage;
 
 import java.util.List;
 

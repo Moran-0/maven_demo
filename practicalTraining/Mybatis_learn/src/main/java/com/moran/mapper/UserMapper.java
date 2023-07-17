@@ -1,6 +1,6 @@
 package com.moran.mapper;
 
-import com.moran.pojo.User;
+import com.moran.Pojo.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 

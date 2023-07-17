@@ -3,8 +3,8 @@ package com.moran.service.User;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.moran.mapper.User.CustomerMapper;
-import com.moran.pojo.Customer;
-import com.moran.pojo.CustomerPage;
+import com.moran.Pojo.Customer;
+import com.moran.Pojo.CustomerPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.moran.mapper;
 
-import com.moran.pojo.Dep1;
+import com.moran.Pojo.Dep1;
 
 import java.util.List;
 

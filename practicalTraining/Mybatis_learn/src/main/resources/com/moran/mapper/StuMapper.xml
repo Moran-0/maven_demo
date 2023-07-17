@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.moran.mapper.StuMapper">
 
-    <resultMap id="stuResultMap" type="com.moran.pojo.Student">
+    <resultMap id="stuResultMap" type="com.moran.Pojo.Student">
         <result column="id" property="id"/>
         <result column="u_name" property="userName"/>
         <result column="password" property="password"/>

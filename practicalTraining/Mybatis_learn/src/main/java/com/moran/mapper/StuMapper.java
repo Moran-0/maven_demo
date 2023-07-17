@@ -1,6 +1,6 @@
 package com.moran.mapper;
 
-import com.moran.pojo.Student;
+import com.moran.Pojo.Student;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

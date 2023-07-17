@@ -1,6 +1,6 @@
 package com.moran.mapper.User;
 
-import com.moran.pojo.Manager;
+import com.moran.Pojo.Manager;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

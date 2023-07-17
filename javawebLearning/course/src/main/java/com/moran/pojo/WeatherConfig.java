@@ -1,4 +1,4 @@
-package com.moran.pojo;
+package com.moran.Pojo;
 
 
 import org.springframework.context.annotation.Bean;

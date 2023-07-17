@@ -1,7 +1,7 @@
 package com.moran.controller.Shop;
 
-import com.moran.pojo.Result;
-import com.moran.pojo.ShopLocker;
+import com.moran.Pojo.Result;
+import com.moran.Pojo.ShopLocker;
 import com.moran.service.Shop.ShopLockerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

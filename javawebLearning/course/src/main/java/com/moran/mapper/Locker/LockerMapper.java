@@ -1,7 +1,7 @@
 package com.moran.mapper.Locker;
 
-import com.moran.pojo.Locker;
-import com.moran.pojo.LockerType;
+import com.moran.Pojo.Locker;
+import com.moran.Pojo.LockerType;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

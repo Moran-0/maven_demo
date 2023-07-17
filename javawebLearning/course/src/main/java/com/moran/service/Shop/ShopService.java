@@ -1,6 +1,6 @@
 package com.moran.service.Shop;
 
-import com.moran.pojo.Shop;
+import com.moran.Pojo.Shop;
 
 import java.util.List;
 

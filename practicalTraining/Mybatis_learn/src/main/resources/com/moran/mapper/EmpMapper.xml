@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.moran.mapper.EmpMapper">
 
-    <resultMap id="EmpMap" type="com.moran.pojo.Emp">
+    <resultMap id="EmpMap" type="com.moran.Pojo.Emp">
         <result column="empno" property="empNo"></result>
         <result column="ename" property="empName"></result>
         <result column="job" property="job"></result>
@@ -13,13 +13,13 @@
         <result column="comm" property="comm"></result>
         <!--        通过association标签设置多对一关联；property值对于Emp类的dep对象属性，
         select值对应sql映射语句id，column属性(数据库中的列名)表示要用当前查询结果的哪个结果作为参数传递给select属性对应的sql语句-->
-        <association property="dep" javaType="com.moran.pojo.Dep" select="selectDept" column="deptno">
+        <association property="dep" javaType="com.moran.Pojo.Dep" select="selectDept" column="deptno">
 
         </association>
         <!--        <result column="dep" property="dep"></result>-->
     </resultMap>
 
-    <resultMap id="DepMap" type="com.moran.pojo.Dep">
+    <resultMap id="DepMap" type="com.moran.Pojo.Dep">
         <result column="deptno" property="deptNo"></result>
         <result column="dname" property="depName"></result>
         <result column="loc" property="loc"></result>

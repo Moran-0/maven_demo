@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.moran.mapper.Shop.ShopMapper">
-    <resultMap id="shopResultMap" type="com.moran.pojo.Shop">
+    <resultMap id="shopResultMap" type="com.moran.Pojo.Shop">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="province" property="province"/>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.moran.mapper.Dep1Mapper">
-    <resultMap id="Dep1Map" type="com.moran.pojo.Dep1">
+    <resultMap id="Dep1Map" type="com.moran.Pojo.Dep1">
         <result column="deptno" property="deptNo"></result>
         <result column="dname" property="depName"></result>
         <result column="loc" property="loc"></result>
-        <collection property="emp1s" select="selectEmp1ByDept" ofType="com.moran.pojo.Emp1" column="deptno">
+        <collection property="emp1s" select="selectEmp1ByDept" ofType="com.moran.Pojo.Emp1" column="deptno">
 
         </collection>
     </resultMap>
 
-    <resultMap id="Emp1Map" type="com.moran.pojo.Emp1">
+    <resultMap id="Emp1Map" type="com.moran.Pojo.Emp1">
         <result column="empno" property="empNo"></result>
         <result column="ename" property="empName"></result>
         <result column="job" property="job"></result>

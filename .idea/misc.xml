@@ -8,6 +8,10 @@
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/practice" />
     <file type="web" url="file://$PROJECT_DIR$/javawebLearning/spring-demo" />
     <file type="web" url="file://$PROJECT_DIR$/practicalTraining/maven_02" />
+    <file type="web" url="file://$PROJECT_DIR$/practicalTraining/mvc-work" />
+    <file type="web" url="file://$PROJECT_DIR$/practicalTraining/spring-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/practicalTraining/SSM" />
+    <file type="web" url="file://$PROJECT_DIR$/practicalTraining/ssm_mvc_cyf" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -21,6 +25,12 @@
         <option value="$PROJECT_DIR$/practicalTraining/maven_02/pom.xml" />
         <option value="$PROJECT_DIR$/javawebLearning/ajax-demo/pom.xml" />
         <option value="$PROJECT_DIR$/practicalTraining/Mybatis_learn/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/spring-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/spring-mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/spring-work/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/SSM/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/springBootDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/practicalTraining/mvc-work/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -29,7 +39,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

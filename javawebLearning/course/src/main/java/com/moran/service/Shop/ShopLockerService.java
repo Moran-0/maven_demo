@@ -1,6 +1,6 @@
 package com.moran.service.Shop;
 
-import com.moran.pojo.ShopLocker;
+import com.moran.Pojo.ShopLocker;
 
 import java.util.List;
 
